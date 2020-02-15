@@ -87,6 +87,12 @@ function App(props) {
     props.changeResistance1(randomNumber());
     props.changeResistance2(randomNumber());
     props.changeVoltageT(randomNumber());
+    props.changeUserCurrent1('');
+    props.changeUserCurrent2('');
+    props.changeUserCurrentT('');
+    props.changeUserVoltage1('');
+    props.changeUserVoltage2('');
+    props.changeUserResistanceT('');
   };
 
   return (
@@ -158,6 +164,43 @@ const mapDispatchToProps = dispatch => {
 
     changeVoltageT: payload => {
       dispatch({ type: actionTypes.CHANGE_VOLTAGE_T, payload });
+    },
+
+    changeUserCurrent1: payload => {
+      dispatch({
+        type: actionTypes.CHANGE_USER_CURRENT_1,
+        payload
+      });
+    },
+    changeUserCurrent2: payload => {
+      dispatch({
+        type: actionTypes.CHANGE_USER_CURRENT_2,
+        payload
+      });
+    },
+    changeUserCurrentT: payload => {
+      dispatch({
+        type: actionTypes.CHANGE_USER_CURRENT_T,
+        payload
+      });
+    },
+    changeUserResistanceT: payload => {
+      dispatch({
+        type: actionTypes.CHANGE_USER_RESISTANCE_T,
+        payload
+      });
+    },
+    changeUserVoltage1: payload => {
+      dispatch({
+        type: actionTypes.CHANGE_USER_VOLTAGE_1,
+        payload
+      });
+    },
+    changeUserVoltage2: payload => {
+      dispatch({
+        type: actionTypes.CHANGE_USER_VOLTAGE_2,
+        payload
+      });
     }
   };
 };
