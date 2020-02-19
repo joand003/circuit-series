@@ -14,8 +14,14 @@ function App(props) {
 
   const currentTotal =
     Math.floor((props.voltageTotal / resistanceTotal) * 1000) / 1000;
-  const voltageOne = Math.floor(currentTotal * props.resistance1 * 1000) / 1000;
-  const voltageTwo = Math.floor(currentTotal * props.resistance2 * 1000) / 1000;
+  const voltageOne =
+    Math.floor(
+      props.voltageTotal * (props.resistance1 / resistanceTotal) * 1000
+    ) / 1000;
+  const voltageTwo =
+    Math.floor(
+      props.voltageTotal * (props.resistance2 / resistanceTotal) * 1000
+    ) / 1000;
 
   const checkAnswers = () => {
     props.changeAnswerMode(true);
